@@ -58,6 +58,7 @@ int crea_sala(int capacidad){
   if (sala.capacidad != 0 || capacidad <= 0) return -1; // Ya existe una sala, se debería eliminar la anterior antes de crear otra
   sala.capacidad = capacidad;
   sala.id_personas = malloc(capacidad * sizeof(int));
+  if (sala.id_personas == NULL) return -1; // No se ha podido reservar memoria para la sala
   for (int i = 0; i < capacidad; i++) sala.id_personas[i] = 0;
   return capacidad;
 }
