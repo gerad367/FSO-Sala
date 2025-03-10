@@ -51,6 +51,8 @@ int asientos_ocupados(){
 }
 
 int capacidad_sala(){
+  // no existe la sala
+  if (sala.capacidad == 0) return -1;
   return sala.capacidad;
 }
 
